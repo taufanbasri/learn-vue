@@ -2,15 +2,12 @@
 <html lang="en">
 <head>
     <title>Learn Vue JS</title>
-    <style>
-        .is-loading{
-            background: red;
-        }
-    </style>
 </head>
 <body>
     <div id="root">
-        <button :class="{ 'is-loading': isLoading }" @click="toggleClass">Toggle Me!</button>
+        <!-- Traditional -->
+        <!-- <h1>{{ message.split('').reverse().join('') }}</h1> -->
+        <h1>{{ reversedMessage }}</h1>
     </div>
 
     <script src="vue.js"></script>
@@ -18,12 +15,12 @@
         var app = new Vue({
             el: '#root',
             data: {
-                isLoading: false
+                message: 'Hello World'
             },
 
-            methods: {
-                toggleClass() {
-                    this.isLoading = true
+            computed: {
+                reversedMessage() {
+                    return this.message.split('').reverse().join('')
                 }
             }
         })
