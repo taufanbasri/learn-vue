@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Learn Vue JS</title>
+    <style>
+        .color-red{ color: red; }
+    </style>
 </head>
 <body>
     <div id="root">
-        <!-- <button v-bind:title="title">Hover Over Me</button> -->
-        <!-- alternative -->
-        <button :title="title">Hover Over Me</button>
+        <h1 :class="className">Hello World</h1>
     </div>
 
     <script src="vue.js"></script>
@@ -18,7 +16,7 @@
         var app = new Vue({
             el: '#root',
             data: {
-                title: 'Now the title is being set through JavaScript.'
+                className: 'color-red'
             }
         })
     </script>
