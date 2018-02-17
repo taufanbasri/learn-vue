@@ -3,12 +3,14 @@
 <head>
     <title>Learn Vue JS</title>
     <style>
-        .color-red{ color: red; }
+        .is-loading{
+            background: red;
+        }
     </style>
 </head>
 <body>
     <div id="root">
-        <h1 :class="className">Hello World</h1>
+        <button :class="{ 'is-loading': isLoading }" @click="toggleClass">Toggle Me!</button>
     </div>
 
     <script src="vue.js"></script>
@@ -16,7 +18,13 @@
         var app = new Vue({
             el: '#root',
             data: {
-                className: 'color-red'
+                isLoading: false
+            },
+
+            methods: {
+                toggleClass() {
+                    this.isLoading = true
+                }
             }
         })
     </script>
