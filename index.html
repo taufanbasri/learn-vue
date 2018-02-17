@@ -5,36 +5,10 @@
 </head>
 <body>
     <div id="root">
-        <h1>All Tasks</h1>
-        <ul>
-            <li v-for="task in tasks" v-text="task.description"></li>
-        </ul>
-
-        <h1>Incomplete Tasks</h1>
-        <ul>
-            <li v-for="task in incompleteTasks" v-text="task.description"></li>
-        </ul>
+        <task></task>
     </div>
 
     <script src="vue.js"></script>
-    <script>
-        var app = new Vue({
-            el: '#root',
-            data: {
-                tasks: [
-                    {description: 'Learn Vue', completed: true },
-                    {description: 'Learn React', completed: false },
-                    {description: 'Learn Angular', completed: false },
-                    {description: 'Learn Laravel', completed: true },
-                ]
-            },
-
-            computed: {
-                incompleteTasks() {
-                    return this.tasks.filter(task => ! task.completed)
-                }
-            }
-        })
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
